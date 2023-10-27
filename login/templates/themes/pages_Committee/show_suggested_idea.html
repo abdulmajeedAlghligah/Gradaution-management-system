@@ -1,0 +1,50 @@
+{%extends 'themes/basic_committee.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container{
+            text-align: center;
+            padding-top:100px
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <table class="table table-bordered">
+    <thead>
+            
+        <tr>
+            <th scope="col">Project ID</th>            
+            <th scope="col">Project Idea</th>            
+            <th scope="col">Field Project</th>             
+            <th scope="col">Description Project</th>             
+            <th scope="col">File Project</th>             
+            <th scope="col">Doctor Name</th>              
+            
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+            
+            {%for pro in project%}
+            <td>{{pro.id_projects}}</td>
+            <td>{{pro.name_projects}}</td>
+            <td>{{pro.filled_projects}}</td>
+            <td>{{pro.descriotion_projects}}</td>
+            <td><a class="btn btn-outline-primary" href="{{pro.file_project.url}}" Download="pro.file_project.url">Download Files</a></td>
+            <td>{{pro.id_Doctors_fk}}</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
+{%endblock%}

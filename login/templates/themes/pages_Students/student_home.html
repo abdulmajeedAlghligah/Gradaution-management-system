@@ -1,0 +1,50 @@
+{%extends 'themes/baisc_students.html'%}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+.responsive {
+border-radius: 4px;
+padding: 5px;
+width: 150px;
+}
+.content{
+text-align: center
+
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(233, 225, 225);
+   color: rgb(48, 46, 46);
+   text-align: center;
+}
+</style>
+<body>
+
+    <img src="{% static 'image/imam.png' %}" alt="My image" class="responsive" >
+
+<div class="content">
+<h3  >Welcome to the graduation projects management page</h3>
+
+</div>
+<div class="footer">
+   
+    <a href = "">Technical support</a>
+ <br>
+ <br>
+
+    </div>
+
+</body>
+</html>
+   
+{% endblock content %}
+    

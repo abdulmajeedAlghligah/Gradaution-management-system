@@ -1,0 +1,52 @@
+{%extends 'themes/baisc_doctors.html'%}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            padding-top:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="text-align: center;">
+    <table class="table table-bordered">
+        <thead>
+              
+          <tr>
+              <th scope="col">ID Evaluation</th>            
+              <th scope="col">ID Groups </th>            
+              <th scope="col">Doctor 1</th>   
+              <th scope="col">Doctor 2</th>            
+              <th scope="col">Doctor 3</th>
+              <th scope="col">Upload file</th>                      
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                {% for evaluaion in evaluations %}
+                <td>{{evaluaion.id_evaluation}}</td>
+                <td>{{evaluaion.id_groups_fk}}</td>
+                <td>{{evaluaion.id_doctor_fk}}</td>
+                <td>{{evaluaion.id_doctor_fk2}}</td>
+                <td>{{evaluaion.id_doctor_fk3}}</td>
+                <td> <div style="padding-top: 15px;"> <a class="btn btn-outline-success" href="{%url 'doctor_upload_file' evaluaion.id_evaluation%}">Choose</a></div></td>
+
+                
+              </tr>
+              {% endfor %}
+          </tbody>
+  </table>
+</div>
+</body>
+</html>
+{%endblock%}

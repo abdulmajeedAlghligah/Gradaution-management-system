@@ -1,0 +1,50 @@
+{%extends 'themes/baisc_students.html'%}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container{
+            text-align: center;
+            padding-top: 100px;
+            }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+                
+            <tr>
+                <th scope="col">Students ID</th>            
+                <th scope="col">Students Name</th>
+                <th scope="col">Group ID</th>                         
+                <th scope="col">Choose Group</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                
+                    {%for student in students%}
+                
+                <td>{{student.id_students}}</td>
+                <td>{{student.name_Students}}</td>
+                <td>{{student.id_groups_fk}}</td>
+                <td><a class="btn btn-outline-success" href="{%url 'choose_group' student.id_students%}">Choose</a></td>
+                
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+</div>
+</body>
+
+</html> 
+{% endblock content %}
+    

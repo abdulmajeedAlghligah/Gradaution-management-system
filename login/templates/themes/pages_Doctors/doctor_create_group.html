@@ -1,0 +1,66 @@
+{%extends 'themes/baisc_doctors.html'%}
+
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+  .container{
+    text-align: center;
+    padding-top:100px
+  }
+  .s {
+    padding-top:50px
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Choose</th>
+              </tr>
+            </thead>
+            <form method ="POST">
+              {% csrf_token %} 
+            <tbody>
+                {% for student in students  %}
+
+                <tr>
+                
+                  <td>{{student.bu_id}}</td>
+                  <td>{{student.name_Students}}</td>
+                  <td><a class="btn btn-outline-success" href="{%url 'doctor_creating_group' student.id_students%}">Choose</a></td>
+
+                  {% endfor %}
+
+                </tr>
+                
+                
+            </tbody>
+          </table>
+
+
+          </form>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="s">
+              <h3 style="font-style:oblique;">Create Group</h3>
+            <input type="text" name="create" class="form-control">
+            
+        </div>
+        <br>
+        <div class="card-foter">
+            <button type="submit" class="btn btn-outline-primary">submit</button>
+        </div>
+            
+        </form>
+  </div>
+          
+  </body>
+</html> 
+{%endblock%}

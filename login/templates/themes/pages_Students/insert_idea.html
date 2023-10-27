@@ -1,0 +1,15 @@
+{%extends 'themes/baisc_students.html'%}
+
+{%block content%}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="s">
+    {{from}}
+    </div>
+    <div class="card-foter">
+        <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+</form>
+<h2>test</h2>
+{%endblock%}

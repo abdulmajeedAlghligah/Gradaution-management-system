@@ -1,0 +1,56 @@
+{%extends 'themes/baisc_students.html'%}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container{
+            text-align: center;
+            padding-top: 100px;
+        }
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+            
+          <tr>
+            <th scope="col">Group ID</th>            
+            <th scope="col">Title</th>            
+            <th scope="col">Description</th>   
+            <th scope="col">File</th>            
+            <th scope="col">Doctor</th>
+            <th scope="col">Department</th>                    
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+            {% for gr in archiveed %}
+            
+              <td>{{gr.id_groups_fk}}</td>
+              <td>{{gr.name_projects}}</td>
+              <td>{{gr.descriotion_projects}}</td>
+              <td><a class="btn btn-outline-primary" href="{{gr.file_project.url}}"Dwonload="gr.file_project.url">Dwonload Files</a></td>
+              <td>{{gr.id_Doctors_fk}}</td>
+              <td>{{gr.id_department_fk}}</td>  
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+  </div>
+
+</body>
+
+</html>
+
+{%endblock%}
+
+
+
+

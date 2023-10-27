@@ -1,0 +1,40 @@
+{%extends 'themes/baisc_students.html'%}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="s">
+
+            {{Upload_form}}
+        </div>
+        <br>
+        <div class="card-foter">
+            <button type="submit" class="btn btn-outline-primary">submit</button>
+        </div>
+            
+        </form>
+
+    </div>
+</body>
+</html>
+
+{% endblock content %}
+    

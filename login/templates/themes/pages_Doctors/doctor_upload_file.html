@@ -1,0 +1,19 @@
+{%extends 'themes/baisc_doctors.html'%}
+{% block content %}
+
+<form method="POST" enctype="">
+    {% csrf_token %}
+    <div class="s">
+
+    {{from}}
+    </div>
+    <div class="card-foter">
+        <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+</form>
+
+
+
+
+
+{%endblock%}

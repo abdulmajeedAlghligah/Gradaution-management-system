@@ -1,0 +1,61 @@
+{%extends 'themes/baisc_students.html'%}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container{
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <table class="table table-bordered">
+    <thead>
+            
+        <tr>
+            <th scope="col">Group ID</th>            
+            <th scope="col">idea</th>            
+            <th scope="col">Field</th>             
+            <th scope="col">Description</th>             
+            <th scope="col">File</th>             
+            <th scope="col">Name Doctor</th>           
+            <th scope="col">Choose</th>    
+                
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+            
+                {%for pro in project%}
+            
+            <td>{{pro.id_groups_fk}}</td>
+            <td>{{pro.name_projects}}</td>
+            <td>{{pro.filled_projects}}</td>
+            <td>{{pro.descriotion_projects}}</td>
+            <td><a class="btn btn-outline-primary" href="{{pro.file_project.url}}"Dwonload="pro.file_project.url">Download</a></td>
+            <td>{{pro.id_Doctors_fk}}</td>
+            {%for choose in choiceidea%}
+            <td><a class="btn btn-outline-success" href="{%url 'Chose_Enter' choose.id_students%}">Choose</a></td>
+            {% endfor %}
+            
+                
+            
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html> 
+{% endblock content %}
+    

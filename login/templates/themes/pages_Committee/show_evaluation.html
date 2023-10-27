@@ -1,0 +1,48 @@
+{%extends 'themes/basic_committee.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            padding-top:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="text-align: center;">
+    <table class="table table-bordered">
+        <thead>
+              
+          <tr>
+              <th scope="col">ID Evaluation</th>            
+              <th scope="col">ID Groups </th>            
+              <th scope="col">Name Doctor 1</th>   
+              <th scope="col">Name Doctor 2</th>            
+              <th scope="col">Name Doctor 3</th>                      
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                {% for evaluaion in evaluation %}
+                <td>{{evaluaion.id_evaluation}}</td>
+                <td>{{evaluaion.id_groups_fk}}</td>
+                <td>{{evaluaion.id_doctor_fk}}<br><!--<div style="padding-top:10px;"><a  class="btn btn-outline-primary" href="{{evaluaion.file_evaluation.url}}"Dwonload="evaluaion.file_evaluation.url">Dwonload Files</a></div>--></td> 
+                <td>{{evaluaion.id_doctor_fk2}}<br><!--<div style="padding-top:10px;"><a class="btn btn-outline-primary" href="{{evaluaion.file_evaluation_dr2.url}}"Dwonload="evaluaion.file_evaluation_dr2.url">Dwonload Files</a></div>--></td>
+                <td>{{evaluaion.id_doctor_fk3}}<br><!--<div style="padding-top:10px;"><a class="btn btn-outline-primary" href="{{evaluaion.file_evaluation_dr3.url}}"Dwonload="evaluaion.file_evaluation_dr3.url">Dwonload Files</a></div>--></td>
+
+                
+              </tr>
+              {% endfor %}
+          </tbody>
+  </table>
+</div>
+</body>
+</html>
+{%endblock%}

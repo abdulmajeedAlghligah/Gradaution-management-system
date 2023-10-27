@@ -1,0 +1,117 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/loginStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{'css/cheekbox.css' }">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body{
+            background-image: url('static/image/b.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            input{
+                background-color: #f6f6f6;
+                border: none;
+                color: #0d0d0d;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 5px;
+                width: 85%;
+                border: 2px solid #f6f6f6;
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -ms-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+                -webkit-border-radius: 5px 5px 5px 5px;
+                border-radius: 5px 5px 5px 5px;
+            }
+            input:focus {
+                background-color: #fff;
+                border-bottom: 2px solid #5fbae9;
+            }
+            input:placeholder {
+                color: #cccccc;
+            }
+            
+        </style>
+    <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        
+        <div class="fadeIn first">
+            <br>
+            <img src="{% static 'image/login64.png' %}" alt="My image">
+        </div>
+        <br>
+        <!-- Login Form Committee -->
+        <form method="POST">
+            {% csrf_token %}
+            <input type="number" id="login" class="fadeIn second" name="bu_id" placeholder="login">  <i class='bx bxs-user'></i>
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"> <i class='bx bxs-lock-alt' ></i>
+            <br>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+            <div class="checkbox-wrapper-33">
+                <label class="checkbox">
+                  <input type="checkbox" class="checkboxtrigger visuallyhidden">
+                  <span class="checkboxsymbol">
+
+                    
+                  </span>
+                  <p class="checkbox__textwrapper">Remember Me</p>
+                </label>
+              </div>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="fadeIn fourth" href="{% url 'login' %}">Back</a>
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+{% block content %}
+{% endblock content %}

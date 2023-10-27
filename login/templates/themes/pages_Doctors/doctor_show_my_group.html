@@ -1,0 +1,46 @@
+{%extends 'themes/baisc_doctors.html'%}
+
+{%block content%}
+<div class="container" style="text-align: center;">
+    <table class="table table-bordered">
+      <thead>
+            <br>
+            <br>
+            <br>
+          <tr>
+            <th scope="col">Group ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Student 1</th>
+            <th scope="col">Student 2</th>
+            <th scope="col">Student 3</th>
+            <th scope="col">Student 4</th>
+            <th scope="col">Student 5</th>
+          </tr>
+        </thead>
+        <form method ="POST">
+          {% csrf_token %} 
+        <tbody>
+            
+
+            <tr>
+            
+            {% for group in groupid %}
+            <td>{{group}}</td>
+            <td>{{group.name_groups}}</td>
+            {% endfor %}
+            {% for student in hisStudents  %}
+            <td>{{student}}</td>
+            {% endfor %}
+            
+              
+
+
+            </tr>
+            
+            
+        </tbody>
+      </table>
+
+</div>
+
+{%endblock%}

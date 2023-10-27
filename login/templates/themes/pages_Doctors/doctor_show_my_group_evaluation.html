@@ -1,0 +1,54 @@
+{%extends 'themes/baisc_doctors.html'%}
+
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+        padding-top:100px;
+        margin-top:10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    
+
+    <table class="table table-bordered">
+      <thead>
+            
+        <tr>
+            <th scope="col">ID Evaluation</th>            
+            <th scope="col">ID Groups </th>            
+            <th scope="col">Doctor 1</th>   
+            <th scope="col">Doctor 2</th>            
+            <th scope="col">Doctor 3</th>            
+                       
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+               {% for evaluation in doctor_evaluating %}
+             
+              <td>{{evaluation.id_evaluation}}</td>
+              <td>{{evaluation.id_groups_fk}}</td>
+              <td>{{evaluation.id_doctor_fk}}<br> <div style="padding-top:10px;"><a  class="btn btn-outline-primary" href="{{evaluation.file_evaluation.url}}"Dwonload="evaluaion.file_evaluation.url">Download Files</a></div</td>
+              <td>{{evaluation.id_doctor_fk2}}<br><div style="padding-top:10px;"><a class="btn btn-outline-primary" href="{{evaluation.file_evaluation_dr2.url}}"Dwonload="evaluaion.file_evaluation_dr2.url">Download Files</a></div></td>
+              <td>{{evaluation.id_doctor_fk3}}<br><div style="padding-top:10px;"><a class="btn btn-outline-primary" href="{{evaluation.file_evaluation_dr3.url}}"Dwonload="evaluaion.file_evaluation_dr3.url">Download Files</a></div></td>              
+            </tr>
+             {% endfor %}
+             
+        </tbody>
+</table>
+</div>
+
+</body>
+
+</html>
+        
+
+{%endblock%}

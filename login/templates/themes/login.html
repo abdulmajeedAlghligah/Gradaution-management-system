@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/loginStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="{% static 'script/script.js' %}"></script>
+
+   <style>
+body{
+    background-image: url('static/image/b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+   </style>
+
+</head>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+{% block content %}
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        
+
+        <!-- Icon -->
+        
+        <div class="fadeIn first">
+            
+        </div>
+
+        <!-- Login Form -->
+        <form method="GET">
+            <br>
+
+            <a class="fadeIn fourth" href="loginCommittee">Committee</a>
+            <a class="fadeIn fourth" href="loginDoctors">Doctors</a>
+            <a class="fadeIn fourth" href="loginStudents">Students</a>
+          
+        </form>
+
+        <!-- Remind Passowrd -->
+    </div>
+</div>
+</body>
+</html>
+
+
+{% endblock content %}

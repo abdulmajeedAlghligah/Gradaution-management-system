@@ -1,0 +1,65 @@
+{%extends 'themes/basic_committee.html'%}
+{%block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container{
+            text-align: center;
+            padding-top:100px
+        }
+        .s {
+            padding-top:50px
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Doctor ID</th>            
+                        <th scope="col">Doctor Name</th>            
+                        <th scope="col">Group ID</th>            
+                        <th scope="col">Edit</th>            
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for doctor in doctors %}
+                            <td>{{ doctor.id_doctors }}</td>
+                            <td>{{ doctor.name_doctors }}</td>
+                            <td>{{ doctor.id_groups_fk }}</td>
+                            <td><a class="btn btn-outline-primary" href="{%url 'Doctor_update' doctor.id_doctors %}"> Edit </a></td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Student ID</th>            
+                        <th scope="col">Student Name</th>            
+                        <th scope="col">Group ID</th>            
+                        <th scope="col">Edit</th>            
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {%for s in student%}
+                            <td>{{ s.id_students }}</td>
+                            <td>{{ s.name_Students }}</td>
+                            <td>{{ s.id_groups_fk }}</td>
+                            <td><a class="btn btn-outline-primary" href="{%url 'Student_update' s.id_students%}"> Edit </a></td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
+
+{%endblock%}

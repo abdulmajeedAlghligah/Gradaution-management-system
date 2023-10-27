@@ -1,0 +1,55 @@
+{%extends 'themes/basic_committee.html'%}
+
+
+{%block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container{
+        text-align: center;
+        padding-top:100px
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+
+    <table class="table table-bordered">
+      <thead>
+            
+          <tr>
+            <th scope="col">Group ID</th>            
+            <th scope="col">CRN</th>            
+            <th scope="col">Edit</th>            
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              {%for gr in groub%}
+            
+              <td>{{gr.id_groups}}</td>
+              <td>{{gr.name_groups}}</td>
+              <td><a class="btn btn-outline-success" href="{%url 'CRN_update' gr.id_groups%}">Edit</a></td>
+
+              
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+      </table>
+      
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+{%endblock%}

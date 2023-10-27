@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Doctor</title>
+<link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+<script src="{% static 'script/script.js' %}"></script>
+
+<style>
+    .titlespan{
+        color:#4d94ff;
+    }
+
+    span{
+        color:#e6f0ff;
+    }
+</style>
+<script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Welcome Dr.{{request.session.doctor_name}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="" href="doctors_home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="doctor_show_idea">Show groups idea</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Groups</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="doctor_create_group">Create a group</a></li>
+                            <li><a class="dropdown-item" href="doctor_show_my_group">Show my group</a></li>
+    
+   
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Evaluation</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="doctor_evaluating_groups">Evaluating the groups</a></li>
+                            <li><a class="dropdown-item" href="doctor_show_my_group_evaluation">Show my group evaluating</a></li>
+                       
+
+
+                        </ul>
+
+                    </li>
+
+
+                    <ul>     
+                        <h6 class="dropdown-item"><span class="titlespan"id="time"></h6>
+
+                    </ul>
+                 
+  
+                </ul>
+
+                    <form class="d-flex">
+                        <a class="navbar-brand"><span class="titlespan">BU_ID</span> : <span>{{ request.session.doctor_id_bu }}</span></a>
+                        <a class="navbar-brand"><span class="titlespan">Group_ID</span> : <span>{{ request.session.doctor_group_id }}</span></a>
+                        <a class="navbar-brand"><span class="titlespan">Dep_ID</span> : <span>{{ request.session.doctor_dep_name }}</span></a>
+                        <a class="btn btn-outline-danger" href="loginDoctors">Logout</a>
+                    </form>
+
+
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
+{%block content%}
+{%endblock%}

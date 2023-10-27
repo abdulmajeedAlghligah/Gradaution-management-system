@@ -1,0 +1,57 @@
+{%extends 'themes/baisc_doctors.html'%}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+  .container{
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+      <br><br><br>
+        <table class="table table-bordered">
+          <thead>
+                <br>
+                <br>
+                <br>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Group ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">File</th>
+                <th scope="col">Choose</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for project in projects  %}
+
+                <tr>
+                <th scope="row">{{project.id_projects}}</th>
+                
+                  <td>{{project.id_groups_fk}}</td>
+                  <td>{{project.name_projects}}</td>
+                  <td>{{project.descriotion_projects}}</td>
+                  <td><a class="btn btn-outline-primary" href="{{ project.file_project.url }}">Download</a></td>
+                  {% for doctor in doctors  %}
+                  <td><a class="btn btn-outline-success" href="{%url 'doctor_choose_idea' doctor.id_doctors%}">Choose</a></td>
+                  {% endfor %}
+                  {% endfor %}
+
+                </tr>
+                
+                
+            </tbody>
+          </table>
+          <br><br>
+            
+  </div>
+  </body>
+</html> 
+{%endblock%}
