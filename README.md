@@ -2,7 +2,7 @@
 ## Title Manage the Gradaution-Project-management-system
 # The project aims to transaction from papers to systems 
 ## and we using Django framework. 
-#### To start learn from our documentation > https://github.com/hamad57/files-of-workteam/blob/main/Hamad/djangoCourse.txt
+#### To start learn from our documentation > [https://github.com/hamad57/files-of-workteam/blob/main/Hamad/djangoCourse.txt](https://github.com/abdulmajeedAlghligah/Gradaution-management-system/tree/main)
 #### to run the django follow this steps :
 
 ##### 	1- create virtual enviroment ( vertualenv )
